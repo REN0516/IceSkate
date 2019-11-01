@@ -33,4 +33,13 @@ public class PlayerContorller : MonoBehaviour
         vector_ = new Vector2(x_ * speed_, y_ * speed_);
         rigidbody_.AddForce(vector_);
     }
+
+    void OnTriggerEnter2D(Collider2D c)
+    {
+        string name = c.gameObject.tag;
+        if(name == "Obstacle")
+        {
+            Debug.Log("障害物に当たりました");
+        }
+    }
 }
