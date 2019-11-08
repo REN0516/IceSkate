@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class OptionManager : MonoBehaviour
 {
-    [SerializeField] private GameObject[] ui_objects;
+    [SerializeField] private GameObject[] buttons_;
 
     void Start()
     {
-        for(int i = 0;i < ui_objects.Length;i++)
+        for(int i = 0;i < buttons_.Length; i++)
         {
-            ui_objects[i].SetActive(false);
+            buttons_[i].SetActive(false);
         }
     }
 
@@ -19,19 +19,27 @@ public class OptionManager : MonoBehaviour
         
     }
 
-    public void OnOpenOption()
+    public void OnOpenTitleMenu()
     {
-        for(int i = 0;i < ui_objects.Length; i++)
-        {
-            ui_objects[i].SetActive(true);
-        }
+        gameObject.SetActive(false);
+        buttons_[1].SetActive(true);
     }
 
-    public void OnCloseOption()
+    public void OnCloseTitleMenu()
     {
-        for(int i = 0;i < ui_objects.Length; i++)
-        {
-            ui_objects[i].SetActive(false);
-        }
+        gameObject.SetActive(true);
+        buttons_[1].SetActive(false);
+    }
+
+    public void OnOpenSoundMenu()
+    {
+        gameObject.SetActive(false);
+        buttons_[0].SetActive(true);
+    }
+
+    public void OnCloseSoundMenu()
+    {
+        gameObject.SetActive(true);
+        buttons_[0].SetActive(false);
     }
 }
