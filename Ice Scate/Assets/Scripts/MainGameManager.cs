@@ -9,7 +9,7 @@ public class MainGameManager : MonoBehaviour
 
     void Start()
     {
-        int i = 100;
+        int i = 0;
         score_text.text = i.ToString();
     }
 

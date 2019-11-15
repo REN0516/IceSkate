@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class OptionManager : MonoBehaviour
 {
@@ -41,5 +42,10 @@ public class OptionManager : MonoBehaviour
     {
         gameObject.SetActive(true);
         buttons_[0].SetActive(false);
+    }
+
+    public void OnGoTitle()
+    {
+        //SceneManager.LoadScene("Title");
     }
 }
