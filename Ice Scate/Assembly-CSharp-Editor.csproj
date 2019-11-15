@@ -66,6 +66,7 @@
     <Compile Include="Assets\Airy UI\Editor\AiryUIBackButtonInspector.cs" />
     <Compile Include="Assets\Airy UI\Editor\AiryUICustomAnimationElementInspector.cs" />
     <Compile Include="Assets\Airy UI\Editor\AiryUIMainEditor.cs" />
+    <Compile Include="Assets\Editor\PositionEditor.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>C:/Users/student/Desktop/修了制作/Ice Scate/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
