@@ -21,6 +21,9 @@ public class TitleFunction: MonoBehaviour
     {
         
     }
+
+    //セレクトボタン表示
+
     public void StartButtonFunction() 
     {
 
@@ -30,6 +33,9 @@ public class TitleFunction: MonoBehaviour
 
         
     }
+
+    //メインゲーム遷移
+
     public void MainButtonFunction()
     {
 
@@ -37,10 +43,30 @@ public class TitleFunction: MonoBehaviour
 
     }
 
+    //チュートリアル遷移
+
     public void TutorialFunction()
     {
 
         SceneManager.LoadScene("Tutorial");
+
+    }
+
+    //スコア表示
+
+    public void ScoreFunction()
+    {
+
+        
+
+    }
+
+    //オプション機能表示
+
+    public void OptionFunction()
+    {
+
+
 
     }
 
