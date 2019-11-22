@@ -37,7 +37,7 @@ public class PlayerContorller : MonoBehaviour
     void OnTriggerEnter2D(Collider2D c)
     {
         string name = c.gameObject.tag;
-        if(name == "Obstacle")
+        if(name == "Obstacle_Stay" || name == "Obstacle_Move")
         {
             Debug.Log("障害物に当たりました");
         }
