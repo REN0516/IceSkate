@@ -9,6 +9,7 @@ public class TitleFunction: MonoBehaviour
 {
 
     [SerializeField] private GameObject selectbuttons;
+    [SerializeField]Fade fade = null;
 
     // Start is called before the first frame update
     void Start()
@@ -38,8 +39,8 @@ public class TitleFunction: MonoBehaviour
 
     public void MainButtonFunction()
     {
-
-        SceneManager.LoadScene("MainGame");
+        LoadObject.transition_.Fade("MainGame");
+      // SceneManager.LoadScene("MainGame");
 
     }
 
