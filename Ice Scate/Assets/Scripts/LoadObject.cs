@@ -5,10 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class LoadObject : MonoBehaviour
 {
-
     public static LoadObject transition_;
     [SerializeField] Fade fade = null;
-    // Start is called before the first frame update
     void Start()
     {
 
@@ -24,7 +22,6 @@ public class LoadObject : MonoBehaviour
         gameObject.SetActive(true);
     }
 
-    // Update is called once per frame
     void Update()
     {
         
@@ -36,9 +33,5 @@ public class LoadObject : MonoBehaviour
             SceneManager.LoadScene(name);
             fade.FadeOut(0.3f);
         });
-        //SceneManager.LoadScene(name);
     }
-
-
-
 }

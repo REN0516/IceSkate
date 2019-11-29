@@ -14,11 +14,6 @@ public class ToggleOption : MonoBehaviour
         }
     }
 
-    void Update()
-    {
-        
-    }
-
     public void OnOpenOption()
     {
         for(int i = 0;i < ui_objects.Length; i++)

@@ -9,66 +9,31 @@ public class TitleFunction: MonoBehaviour
 {
 
     [SerializeField] private GameObject selectbuttons;
-    [SerializeField]Fade fade = null;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     //セレクトボタン表示
-
     public void StartButtonFunction() 
     {
-
         gameObject.SetActive(false);
 
-        selectbuttons.SetActive(true);
-
-        
+        selectbuttons.SetActive(true);   
     }
 
     //メインゲーム遷移
-
     public void MainButtonFunction()
     {
         LoadObject.transition_.Fade("MainGame");
       // SceneManager.LoadScene("MainGame");
-
     }
 
     //チュートリアル遷移
-
     public void TutorialFunction()
     {
-
         SceneManager.LoadScene("Tutorial");
-
     }
 
     //スコア表示
-
     public void ScoreFunction()
     {
 
-        
-
     }
-
-    //オプション機能表示
-
-    public void OptionFunction()
-    {
-
-
-
-    }
-
 }

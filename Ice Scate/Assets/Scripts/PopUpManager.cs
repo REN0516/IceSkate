@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class OptionManager : MonoBehaviour
+public class PopUpManager : MonoBehaviour
 {
     [SerializeField] private GameObject[] buttons_;
 
@@ -46,6 +46,13 @@ public class OptionManager : MonoBehaviour
 
     public void OnGoTitle()
     {
-        //SceneManager.LoadScene("Title");
+        if(LoadObject.transition_ != null)
+        {
+            LoadObject.transition_.Fade("Title");
+        }
+        else
+        {
+            SceneManager.LoadScene("Title");
+        }
     }
 }
