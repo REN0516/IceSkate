@@ -14,34 +14,17 @@ public class PopUpManager : MonoBehaviour
             buttons_[i].SetActive(false);
         }
     }
-
-    void Update()
+    
+    public void OnOpenPopUp(int value)
     {
-        
-    }
-
-    public void OnOpenTitleMenu()
-    {
-        gameObject.SetActive(false);
-        buttons_[1].SetActive(true);
-    }
-
-    public void OnCloseTitleMenu()
-    {
-        gameObject.SetActive(true);
-        buttons_[1].SetActive(false);
-    }
-
-    public void OnOpenSoundMenu()
-    {
-        gameObject.SetActive(false);
-        buttons_[0].SetActive(true);
-    }
-
-    public void OnCloseSoundMenu()
-    {
-        gameObject.SetActive(true);
         buttons_[0].SetActive(false);
+        buttons_[value].SetActive(true);
+    }
+
+    public void OnClosePopUp(int value)
+    {
+        buttons_[0].SetActive(true);
+        buttons_[value].SetActive(false);
     }
 
     public void OnGoTitle()
