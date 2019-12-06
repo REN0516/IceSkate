@@ -30,10 +30,4 @@ public class TitleFunction: MonoBehaviour
     {
         SceneManager.LoadScene("Tutorial");
     }
-
-    //スコア表示
-    public void ScoreFunction()
-    {
-
-    }
 }
