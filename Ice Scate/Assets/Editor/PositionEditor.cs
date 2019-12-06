@@ -38,6 +38,13 @@ public class PositionEditor : EditorWindow
 
         if (GUILayout.Button("セーブ"))
         {
+            if(id < 0)
+            {
+                Debug.Log("セーブエラー");
+                Debug.Log("要素番号は0以上にしてください");
+                return;
+            }
+
             file_json = "Stage/" + id.ToString() + ".txt";
             PositionData data = new PositionData();
 
