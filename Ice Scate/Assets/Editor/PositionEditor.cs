@@ -99,6 +99,27 @@ public class PositionEditor : EditorWindow
             }
             string json = ReadTextFile(file_json);
 
+            GameObject[] object_stay = GameObject.FindGameObjectsWithTag("Obstacle_Move");
+
+            GameObject[] object_move = GameObject.FindGameObjectsWithTag("Obstacle_Stay");
+
+            //シーンのオブジェクトを全削除
+            if(object_stay != null)
+            {
+                for(int i = 0;i < object_stay.Length; i++)
+                {
+                    //DestroyImmediateは非推奨らしい
+                    DestroyImmediate(object_stay[i]);
+                }
+            }
+            if(object_move != null)
+            {
+                for(int i = 0;i < object_move.Length; i++)
+                {
+                    DestroyImmediate(object_move[i]);
+                }
+            }
+
             if (json != null)
             {
                 PositionData data = JsonUtility.FromJson<PositionData>(json);
@@ -145,4 +166,3 @@ public class PositionData {
     public Vector3[] data_position_stay;
     public Vector3[] data_position_move;
 }
-
