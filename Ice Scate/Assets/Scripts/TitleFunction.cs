@@ -28,6 +28,7 @@ public class TitleFunction: MonoBehaviour
     //チュートリアル遷移
     public void TutorialFunction()
     {
-        SceneManager.LoadScene("Tutorial");
+        LoadObject.transition_.Fade("Tutorial");
+        //SceneManager.LoadScene("Tutorial");
     }
 }

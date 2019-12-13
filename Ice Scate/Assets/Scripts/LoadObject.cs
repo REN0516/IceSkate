@@ -7,6 +7,8 @@ public class LoadObject : MonoBehaviour
 {
     public static LoadObject transition_;
     [SerializeField] Fade fade = null;
+    [SerializeField, Range(1, 5)] float time;
+
     void Start()
     {
 
@@ -22,16 +24,12 @@ public class LoadObject : MonoBehaviour
         gameObject.SetActive(true);
     }
 
-    void Update()
-    {
-        
-    }
     public void Fade(string name)
     {
-        fade.FadeIn(0.3f, () =>
+        fade.FadeIn(time, () =>
         {
             SceneManager.LoadScene(name);
-            fade.FadeOut(0.3f);
+            fade.FadeOut(time);
         });
     }
 }
