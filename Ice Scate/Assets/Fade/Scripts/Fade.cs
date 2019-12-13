@@ -49,14 +49,13 @@ public class Fade : MonoBehaviour
 
 	IEnumerator FadeoutCoroutine (float time, System.Action action)
 	{
-		float endTime = Time.timeSinceLevelLoad + time * (cutoutRange);
+        float tmp_time = time;
 
-		var endFrame = new WaitForEndOfFrame ();
-
-		while (Time.timeSinceLevelLoad <= endTime) {
-			cutoutRange = (endTime - Time.timeSinceLevelLoad) / time;
+		while (tmp_time >= 0) {
+			tmp_time -= Time.deltaTime;
+            cutoutRange = tmp_time / time;
 			fade.Range = cutoutRange;
-			yield return endFrame;
+			yield return new WaitForEndOfFrame();
 		}
 		cutoutRange = 0;
 		fade.Range = cutoutRange;
@@ -68,14 +67,13 @@ public class Fade : MonoBehaviour
 
 	IEnumerator FadeinCoroutine (float time, System.Action action)
 	{
-		float endTime = Time.timeSinceLevelLoad + time * (1 - cutoutRange);
-		
-		var endFrame = new WaitForEndOfFrame ();
+        float tmp_time = 0;
 
-		while (Time.timeSinceLevelLoad <= endTime) {
-			cutoutRange = 1 - ((endTime - Time.timeSinceLevelLoad) / time);
+		while (tmp_time <= time) {
+            tmp_time += Time.deltaTime;
+            cutoutRange = tmp_time / time;
 			fade.Range = cutoutRange;
-			yield return endFrame;
+			yield return new WaitForEndOfFrame();
 		}
 		cutoutRange = 1;
 		fade.Range = cutoutRange;
