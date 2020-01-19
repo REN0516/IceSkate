@@ -19,12 +19,14 @@ public class PopUpManager : MonoBehaviour
     {
         buttons_[0].SetActive(false);
         buttons_[value].SetActive(true);
+        SoundManager.instance.PlaySE(0);
     }
 
     public void OnClosePopUp(int value)
     {
         buttons_[0].SetActive(true);
         buttons_[value].SetActive(false);
+        SoundManager.instance.PlaySE(1);
     }
 
     public void OnGoTitle()
