@@ -24,10 +24,9 @@ public class PlayerContorller : MonoBehaviour
             power_x_ = Input.GetAxis("Mouse X");
             power_y_ = Input.GetAxis("Mouse Y");
         }
-        else
+        if (Input.GetMouseButtonDown(0))
         {
-            power_x_ = 0;
-            power_y_ = 0;
+            rigidbody_.velocity = Vector3.zero;
         }
 
         vector_ = new Vector2(power_x_ * speed_, power_y_ * speed_);

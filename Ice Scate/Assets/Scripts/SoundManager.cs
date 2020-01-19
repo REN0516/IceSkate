@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SoundManager : MonoBehaviour
 {
@@ -32,6 +33,37 @@ public class SoundManager : MonoBehaviour
     {
         source_bgm_.volume = volume_bgm_;
         source_se_.volume = volume_se_;
+
+        string name_scene_ = SceneManager.GetActiveScene().name;
+        switch (name_scene_)
+        {
+            case "Title":
+                PlayBGM(0);
+                break;
+            case "MainGame":
+            case "Tutorial":
+                PlayBGM(1);
+                break;
+        }
+    }
+
+    public void PlayBGM(int number)
+    {
+        if(source_bgm_.clip != clip_bgm_[number])
+        {
+            source_bgm_.Stop();
+            source_bgm_.clip = clip_bgm_[number];
+            source_bgm_.Play();
+        }
+        else
+        {
+            return;
+        }
+    }
+
+    public void PlaySE(int number)
+    {
+        source_se_.PlayOneShot(clip_se_[number]);
     }
 
     public void SetBGMVolume(float value)

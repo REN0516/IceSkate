@@ -3451,7 +3451,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   source_bgm_: {fileID: 1710964682718047214}
   source_se_: {fileID: 1710964682718047215}
-  clip_bgm_: []
+  clip_bgm_:
+  - {fileID: 8300000, guid: 170dce0ac80541c44a206954262148b6, type: 3}
+  - {fileID: 8300000, guid: 27096e6322c006a49baa3ba5e7955330, type: 3}
   clip_se_: []
 --- !u!1 &1710964682718047212
 GameObject:
