@@ -39,5 +39,6 @@ public class PopUpManager : MonoBehaviour
         {
             SceneManager.LoadScene("Title");
         }
+        SoundManager.instance.PlaySE(0);
     }
 }
