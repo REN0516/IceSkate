@@ -20,5 +20,9 @@ public class ToggleOption : MonoBehaviour
         {
             ui_objects[i].SetActive(value);
         }
+        if (!value)
+        {
+            SoundManager.instance.PlaySE(1);
+        }
     }
 }
