@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5243303995657376426}
   - component: {fileID: 242146854190370794}
+  - component: {fileID: 1192094948}
   m_Layer: 0
   m_Name: snowman
   m_TagString: Obstacle_Stay
@@ -79,3 +80,16 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1192094948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7757690424199377428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a8da6d71c136a5439f02c9c0e81eeb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type_: 0

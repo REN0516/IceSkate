@@ -14,19 +14,11 @@ public class ToggleOption : MonoBehaviour
         }
     }
 
-    public void OnOpenOption()
+    public void OnToggleOption(bool value)
     {
-        for(int i = 0;i < ui_objects.Length; i++)
+        for (int i = 0; i < ui_objects.Length; i++)
         {
-            ui_objects[i].SetActive(true);
-        }
-    }
-
-    public void OnCloseOption()
-    {
-        for(int i = 0;i < ui_objects.Length; i++)
-        {
-            ui_objects[i].SetActive(false);
+            ui_objects[i].SetActive(value);
         }
     }
 }

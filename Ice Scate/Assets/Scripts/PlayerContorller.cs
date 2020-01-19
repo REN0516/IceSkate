@@ -9,8 +9,8 @@ public class PlayerContorller : MonoBehaviour
 
     private Vector2 vector_;
 
-    private float x_;
-    private float y_;
+    private float power_x_;
+    private float power_y_;
 
     void Start()
     {
@@ -21,16 +21,16 @@ public class PlayerContorller : MonoBehaviour
     {
         if (Input.GetMouseButton(0))
         {
-            x_ = Input.GetAxis("Mouse X");
-            y_ = Input.GetAxis("Mouse Y");
+            power_x_ = Input.GetAxis("Mouse X");
+            power_y_ = Input.GetAxis("Mouse Y");
         }
         else
         {
-            x_ = 0;
-            y_ = 0;
+            power_x_ = 0;
+            power_y_ = 0;
         }
 
-        vector_ = new Vector2(x_ * speed_, y_ * speed_);
+        vector_ = new Vector2(power_x_ * speed_, power_y_ * speed_);
         rigidbody_.AddForce(vector_);
     }
 
