@@ -25,24 +25,24 @@ public class PlayerContorller : MonoBehaviour
         {
             power_x_ = Input.GetAxis("Mouse X");
             power_y_ = Input.GetAxis("Mouse Y");
-            if(power_x_ > 1)
+            if(power_x_ > 1f)
             {
-                power_x_ = 1;
+                power_x_ = 1f;
                 Debug.Log(power_x_);
             }
-            else if(power_x_ < -1)
+            else if(power_x_ < -1f)
             {
-                power_x_ = -1;
+                power_x_ = -1f;
                 Debug.Log(power_x_);
             }
-            if (power_y_ > 1)
+            if (power_y_ > 1f)
             {
-                power_y_ = 1;
+                power_y_ = 1f;
                 Debug.Log(power_y_);
             }
-            else if(power_y_ < -1)
+            else if(power_y_ < -1f)
             {
-                power_y_ = -1;
+                power_y_ = -1f;
                 Debug.Log(power_y_);
             }
         }
