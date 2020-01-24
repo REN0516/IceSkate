@@ -12,6 +12,8 @@ public class PlayerContorller : MonoBehaviour
 
     private float power_x_;
     private float power_y_;
+    private float animation_x_;
+    private float animation_y_;
 
     void Start()
     {
@@ -28,29 +30,31 @@ public class PlayerContorller : MonoBehaviour
             if(power_x_ > 1f)
             {
                 power_x_ = 1f;
-                Debug.Log(power_x_);
             }
             else if(power_x_ < -1f)
             {
                 power_x_ = -1f;
-                Debug.Log(power_x_);
             }
             if (power_y_ > 1f)
             {
                 power_y_ = 1f;
-                Debug.Log(power_y_);
             }
             else if(power_y_ < -1f)
             {
                 power_y_ = -1f;
-                Debug.Log(power_y_);
+            }
+            if(power_x_ != 0f && power_y_ != 0f)
+            {
+                animation_x_ = power_x_;
+                animation_y_ = power_y_;
             }
         }
         else
         {
-            power_x_ = 0;
-            power_y_ = 0;
+            power_x_ = 0f;
+            power_y_ = 0f;
         }
+
         if (Input.GetMouseButtonDown(0))
         {
             rigidbody_.velocity = Vector3.zero;
@@ -58,8 +62,8 @@ public class PlayerContorller : MonoBehaviour
 
         vector_ = new Vector2(power_x_ * speed_, power_y_ * speed_);
         rigidbody_.AddForce(vector_);
-        animator_.SetFloat("X", power_x_);
-        animator_.SetFloat("Y", power_y_);
+        animator_.SetFloat("X", animation_x_);
+        animator_.SetFloat("Y", animation_y_);
     }
 
     void OnTriggerEnter2D(Collider2D c)

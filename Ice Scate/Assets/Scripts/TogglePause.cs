@@ -1,10 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class ToggleOption : MonoBehaviour
+public class TogglePause : MonoBehaviour
 {
     [SerializeField] private GameObject[] ui_objects;
+    [SerializeField] private Sprite[] sprites_pause;
+    [SerializeField] new private Image renderer;
+
 
     void Start()
     {
@@ -14,7 +18,7 @@ public class ToggleOption : MonoBehaviour
         }
     }
 
-    public void OnToggleOption(bool value)
+    public void OnTogglePause(bool value)
     {
         for (int i = 0; i < ui_objects.Length; i++)
         {
@@ -23,6 +27,11 @@ public class ToggleOption : MonoBehaviour
         if (!value)
         {
             SoundManager.instance.PlaySE(1);
+            renderer.sprite = sprites_pause[1];
+        }
+        else
+        {
+            renderer.sprite = sprites_pause[0];
         }
     }
 }
