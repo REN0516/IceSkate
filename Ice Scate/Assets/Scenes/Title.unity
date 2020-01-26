@@ -684,8 +684,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 20}
-  m_SizeDelta: {x: 1124, y: 450}
+  m_AnchoredPosition: {x: 0, y: -100}
+  m_SizeDelta: {x: 1124, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &843197552
 MonoBehaviour:
@@ -905,7 +905,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51132f33a575d6a48b8cf1bb0fffe46f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectbuttons: {fileID: 0}
+  selectbuttons: {fileID: 1862186901}
 --- !u!114 &906908755
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1055,7 +1055,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: f4db01e062391de44a6fd956bfb470f8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7f124c01c890ee84485a7a05b574bacd, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1115,10 +1115,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdc0b721fbeffca499bd2fa900e29fdd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttons_:
-  - {fileID: 1862186901}
-  - {fileID: 2744579402754891020}
-  - {fileID: 919315445}
+  images_: []
 --- !u!1 &980639061
 GameObject:
   m_ObjectHideFlags: 0
@@ -1303,7 +1300,7 @@ GameObject:
   - component: {fileID: 1275095729}
   - component: {fileID: 1275095728}
   m_Layer: 5
-  m_Name: title
+  m_Name: Title
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1325,8 +1322,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 600}
-  m_SizeDelta: {x: 1124, y: 450}
+  m_AnchoredPosition: {x: 0, y: 500}
+  m_SizeDelta: {x: 800, y: 600}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1275095728
 MonoBehaviour:
@@ -1341,14 +1338,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.7216981, g: 0.91138643, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 02b9ee75de3ae3349a32dd6ba0014e09, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1597,7 +1594,7 @@ GameObject:
   - component: {fileID: 1660430848}
   - component: {fileID: 1660430847}
   m_Layer: 5
-  m_Name: background
+  m_Name: BackGround
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1888,7 +1885,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51132f33a575d6a48b8cf1bb0fffe46f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectbuttons: {fileID: 0}
+  selectbuttons: {fileID: 1862186901}
 --- !u!114 &1875767832
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3279,7 +3276,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: f4db01e062391de44a6fd956bfb470f8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7f124c01c890ee84485a7a05b574bacd, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

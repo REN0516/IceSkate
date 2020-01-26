@@ -5,27 +5,27 @@ using UnityEngine.SceneManagement;
 
 public class PopUpManager : MonoBehaviour
 {
-    [SerializeField] private GameObject[] buttons_;
+    [SerializeField] private GameObject[] images_;
 
     void Start()
     {
-        for(int i = 0;i < buttons_.Length; i++)
+        for(int i = 0;i < images_.Length; i++)
         {
-            buttons_[i].SetActive(false);
+            images_[i].SetActive(false);
         }
     }
     
     public void OnOpenPopUp(int value)
     {
-        buttons_[0].SetActive(false);
-        buttons_[value].SetActive(true);
+        images_[0].SetActive(false);
+        images_[value].SetActive(true);
         SoundManager.instance.PlaySE(0);
     }
 
     public void OnClosePopUp(int value)
     {
-        buttons_[0].SetActive(true);
-        buttons_[value].SetActive(false);
+        images_[0].SetActive(true);
+        images_[value].SetActive(false);
         SoundManager.instance.PlaySE(1);
     }
 
@@ -40,5 +40,6 @@ public class PopUpManager : MonoBehaviour
             SceneManager.LoadScene("Title");
         }
         SoundManager.instance.PlaySE(0);
+        images_[2].SetActive(false);
     }
 }
