@@ -8,7 +8,8 @@ public class TogglePause : MonoBehaviour
     [SerializeField] private GameObject[] ui_objects;
     [SerializeField] private Sprite[] sprites_pause;
     [SerializeField] new private Image renderer;
-
+    [SerializeField] private PlayerContorller player;
+    [SerializeField] private ScoreCounter counter;
 
     void Start()
     {
@@ -28,10 +29,14 @@ public class TogglePause : MonoBehaviour
         {
             SoundManager.instance.PlaySE(1);
             renderer.sprite = sprites_pause[1];
+            player.state = PlayerContorller.State.Active;
+            counter.state = ScoreCounter.State.ACTIVE;
         }
         else
         {
             renderer.sprite = sprites_pause[0];
+            player.state = PlayerContorller.State.Pause;
+            counter.state = ScoreCounter.State.PAUSE;
         }
     }
 }

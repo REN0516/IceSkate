@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class PlayerContorller : MonoBehaviour
 {
+    public enum State {
+        Active,
+        Pause
+    }
+    public State state = State.Active;
+
     private Rigidbody2D rigidbody_;
     private Animator animator_;
     [SerializeField] private int speed_ = 8;
@@ -23,41 +29,48 @@ public class PlayerContorller : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButton(0))
+        if(state == State.Active)
         {
-            power_x_ = Input.GetAxis("Mouse X");
-            power_y_ = Input.GetAxis("Mouse Y");
-            if(power_x_ > 1f)
+            if (Input.GetMouseButton(0))
             {
-                power_x_ = 1f;
+                power_x_ = Input.GetAxis("Mouse X");
+                power_y_ = Input.GetAxis("Mouse Y");
+                if (power_x_ > 1f)
+                {
+                    power_x_ = 1f;
+                }
+                else if (power_x_ < -1f)
+                {
+                    power_x_ = -1f;
+                }
+                if (power_y_ > 1f)
+                {
+                    power_y_ = 1f;
+                }
+                else if (power_y_ < -1f)
+                {
+                    power_y_ = -1f;
+                }
+                if (power_x_ != 0f && power_y_ != 0f)
+                {
+                    animation_x_ = power_x_;
+                    animation_y_ = power_y_;
+                }
             }
-            else if(power_x_ < -1f)
+            else
             {
-                power_x_ = -1f;
+                power_x_ = 0f;
+                power_y_ = 0f;
             }
-            if (power_y_ > 1f)
-            {
-                power_y_ = 1f;
-            }
-            else if(power_y_ < -1f)
-            {
-                power_y_ = -1f;
-            }
-            if(power_x_ != 0f && power_y_ != 0f)
-            {
-                animation_x_ = power_x_;
-                animation_y_ = power_y_;
-            }
-        }
-        else
-        {
-            power_x_ = 0f;
-            power_y_ = 0f;
-        }
 
-        if (Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButtonDown(0))
+            {
+                rigidbody_.velocity = Vector2.zero;
+            }
+        }
+        else if(state == State.Pause)
         {
-            rigidbody_.velocity = Vector3.zero;
+            rigidbody_.velocity = Vector2.zero;
         }
 
         vector_ = new Vector2(power_x_ * speed_, power_y_ * speed_);

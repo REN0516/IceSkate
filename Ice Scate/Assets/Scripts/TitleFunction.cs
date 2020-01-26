@@ -19,6 +19,7 @@ public class TitleFunction: MonoBehaviour
     {
         LoadObject.transition_.Fade("MainGame");
         SoundManager.instance.PlaySE(0);
+        selectbuttons.SetActive(false);
     }
 
     //チュートリアル遷移
@@ -26,5 +27,6 @@ public class TitleFunction: MonoBehaviour
     {
         LoadObject.transition_.Fade("Tutorial");
         SoundManager.instance.PlaySE(0);
+        selectbuttons.SetActive(false);
     }
 }
