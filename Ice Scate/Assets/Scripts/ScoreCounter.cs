@@ -5,17 +5,11 @@ using UnityEngine.UI;
 
 public class ScoreCounter : MonoBehaviour
 {
-    public enum State
-    {
-        ACTIVE,
-        PAUSE
-    }
-    public State state = State.ACTIVE;
+    [SerializeField] private TogglePause pause_;
+    [SerializeField] private Text score_text_;
 
-    [SerializeField] private Text score_text;
-
-    private float tmp_score = 0f;
-    private int score = 0;
+    private float tmp_score_ = 0f;
+    private int score_ = 0;
 
     void Start()
     {
@@ -24,16 +18,16 @@ public class ScoreCounter : MonoBehaviour
 
     void Update()
     {
-        if (state == State.ACTIVE)
+        if (pause_.state_ == TogglePause.State.ACTIVE)
         {
-            tmp_score += Time.deltaTime;
-            score = (int)tmp_score;
-            if (score > 10000000)
+            tmp_score_ += Time.deltaTime;
+            score_ = (int)tmp_score_;
+            if (score_ > 10000000)
             {
-                score = 9999999;
+                score_ = 9999999;
             }
         }
 
-        score_text.text = score.ToString();
+        score_text_.text = score_.ToString();
     }
 }

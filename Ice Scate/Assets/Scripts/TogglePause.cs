@@ -5,38 +5,41 @@ using UnityEngine.UI;
 
 public class TogglePause : MonoBehaviour
 {
-    [SerializeField] private GameObject[] ui_objects;
-    [SerializeField] private Sprite[] sprites_pause;
-    [SerializeField] new private Image renderer;
-    [SerializeField] private PlayerContorller player;
-    [SerializeField] private ScoreCounter counter;
+    public enum State {
+        PAUSE,
+        ACTIVE
+    }
+    public State state_ = State.ACTIVE;
+
+
+    [SerializeField] private GameObject[] ui_objects_;
+    [SerializeField] private Sprite[] sprites_pause_;
+    [SerializeField] private Image renderer_;
 
     void Start()
     {
-        for(int i = 0;i < ui_objects.Length;i++)
+        for(int i = 0;i < ui_objects_.Length;i++)
         {
-            ui_objects[i].SetActive(false);
+            ui_objects_[i].SetActive(false);
         }
     }
 
     public void OnTogglePause(bool value)
     {
-        for (int i = 0; i < ui_objects.Length; i++)
+        for (int i = 0; i < ui_objects_.Length; i++)
         {
-            ui_objects[i].SetActive(value);
+            ui_objects_[i].SetActive(value);
         }
         if (!value)
         {
             SoundManager.instance.PlaySE(1);
-            renderer.sprite = sprites_pause[1];
-            player.state = PlayerContorller.State.Active;
-            counter.state = ScoreCounter.State.ACTIVE;
+            renderer_.sprite = sprites_pause_[1];
+            state_ = State.ACTIVE;
         }
         else
         {
-            renderer.sprite = sprites_pause[0];
-            player.state = PlayerContorller.State.Pause;
-            counter.state = ScoreCounter.State.PAUSE;
+            renderer_.sprite = sprites_pause_[0];
+            state_ = State.PAUSE;
         }
     }
 }

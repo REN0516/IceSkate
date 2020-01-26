@@ -4,11 +4,7 @@ using UnityEngine;
 
 public class PlayerContorller : MonoBehaviour
 {
-    public enum State {
-        Active,
-        Pause
-    }
-    public State state = State.Active;
+    [SerializeField] TogglePause pause_;
 
     private Rigidbody2D rigidbody_;
     private Animator animator_;
@@ -29,7 +25,7 @@ public class PlayerContorller : MonoBehaviour
 
     void Update()
     {
-        if(state == State.Active)
+        if(pause_.state_ == TogglePause.State.ACTIVE)
         {
             if (Input.GetMouseButton(0))
             {
@@ -68,7 +64,7 @@ public class PlayerContorller : MonoBehaviour
                 rigidbody_.velocity = Vector2.zero;
             }
         }
-        else if(state == State.Pause)
+        else if(pause_.state_ == TogglePause.State.PAUSE)
         {
             rigidbody_.velocity = Vector2.zero;
         }
