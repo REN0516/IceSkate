@@ -40,14 +40,17 @@ public class MoveObstacle : MonoBehaviour
 
     void Update()
     {
-        switch (type_)
+        if(GameStateManager.manager_.state_ == GameStateManager.State.ACTIVE)
         {
-            case TYPE.stay:
-                transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y - speed_ * 0.01f, 0);
-                break;
-            case TYPE.move:
-                transform.localPosition = new Vector3(transform.localPosition.x + speed_ * 0.01f, transform.localPosition.y, 0);
-                break;
+            switch (type_)
+            {
+                case TYPE.stay:
+                    transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y - speed_ * 0.01f, 0);
+                    break;
+                case TYPE.move:
+                    transform.localPosition = new Vector3(transform.localPosition.x + speed_ * 0.01f, transform.localPosition.y, 0);
+                    break;
+            }
         }
     }
 }
