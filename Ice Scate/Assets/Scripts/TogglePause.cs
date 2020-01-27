@@ -5,13 +5,6 @@ using UnityEngine.UI;
 
 public class TogglePause : MonoBehaviour
 {
-    public enum State {
-        PAUSE,
-        ACTIVE
-    }
-    public State state_ = State.ACTIVE;
-
-
     [SerializeField] private GameObject[] ui_objects_;
     [SerializeField] private Sprite[] sprites_pause_;
     [SerializeField] private Image renderer_;
