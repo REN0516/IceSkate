@@ -25,7 +25,7 @@ public class PlayerContorller : MonoBehaviour
 
     void Update()
     {
-        if(pause_.state_ == TogglePause.State.ACTIVE)
+        if(GameStateManager.manager_.state_ == GameStateManager.State.ACTIVE)
         {
             if (Input.GetMouseButton(0))
             {
@@ -64,7 +64,7 @@ public class PlayerContorller : MonoBehaviour
                 rigidbody_.velocity = Vector2.zero;
             }
         }
-        else if(pause_.state_ == TogglePause.State.PAUSE)
+        else if(GameStateManager.manager_.state_ == GameStateManager.State.PAUSE)
         {
             rigidbody_.velocity = Vector2.zero;
         }

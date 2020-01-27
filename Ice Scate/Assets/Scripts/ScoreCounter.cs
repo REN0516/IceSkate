@@ -18,13 +18,15 @@ public class ScoreCounter : MonoBehaviour
 
     void Update()
     {
-        if (pause_.state_ == TogglePause.State.ACTIVE)
+        if (GameStateManager.manager_.state_ == GameStateManager.State.ACTIVE)
         {
-            tmp_score_ += Time.deltaTime;
-            score_ = (int)tmp_score_;
-            if (score_ > 10000000)
             {
-                score_ = 9999999;
+                tmp_score_ += Time.deltaTime;
+                score_ = (int)tmp_score_;
+                if (score_ > 10000000)
+                {
+                    score_ = 9999999;
+                }
             }
         }
 
