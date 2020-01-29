@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class ScoreCounter : MonoBehaviour
 {
-    [SerializeField] private TogglePause pause_;
     [SerializeField] private Text score_text_;
 
     private float tmp_score_ = 0f;

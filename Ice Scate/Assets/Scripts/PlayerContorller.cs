@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class PlayerContorller : MonoBehaviour
 {
-    [SerializeField] TogglePause pause_;
-
     private Rigidbody2D rigidbody_;
     private Animator animator_;
     [SerializeField] private int speed_ = 8;

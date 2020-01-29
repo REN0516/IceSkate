@@ -2492,7 +2492,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61cd90048e651454ba2fb4f143e8075c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pause_: {fileID: 1419227758}
   score_text_: {fileID: 168660661}
 --- !u!114 &1419227758
 MonoBehaviour:
@@ -2506,7 +2505,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afa5bf469763b3d42b05c012bc6c40b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  state_: 1
   ui_objects_:
   - {fileID: 2057319596}
   - {fileID: 969507332}
@@ -2630,7 +2628,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 892b25731600cd546a0d215f2d0a4cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pause_: {fileID: 1419227758}
   speed_: 0.3
 --- !u!1 &1457008095
 GameObject:
@@ -3135,6 +3132,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1830572114}
+  - component: {fileID: 1830572116}
+  - component: {fileID: 1830572115}
   m_Layer: 0
   m_Name: DestroyArea
   m_TagString: Untagged
@@ -3150,12 +3149,50 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1830572113}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.10621934, y: 1.6320428, z: -0.083984375}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1830572115
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1830572113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72948a05d71e7cb40a77fecd8d3cf765, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!61 &1830572116
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1830572113}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.025714397, y: -0.051430225}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 6.194233, y: 10.771325}
+  m_EdgeRadius: 0
 --- !u!1 &2007234213
 GameObject:
   m_ObjectHideFlags: 0
@@ -3347,7 +3384,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef959f1ea6a12304183045589e660a72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pause_: {fileID: 1419227758}
   speed_: 4
 --- !u!61 &2024748959
 BoxCollider2D:
