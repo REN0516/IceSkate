@@ -693,13 +693,19 @@
     <Compile Include="Assets\GoogleMobileAds\Platforms\iOS\RewardBasedVideoAdClient.cs" />
     <Compile Include="Assets\GoogleMobileAds\Platforms\iOS\RewardedAdClient.cs" />
     <Compile Include="Assets\GoogleMobileAds\Platforms\iOS\Utils.cs" />
+    <Compile Include="Assets\Scripts\Admob\BannerViewScript.cs" />
+    <Compile Include="Assets\Scripts\DestroyArea.cs" />
+    <Compile Include="Assets\Scripts\Emitter.cs" />
+    <Compile Include="Assets\Scripts\GameStateManager.cs" />
     <Compile Include="Assets\Scripts\LoadObject.cs" />
-    <Compile Include="Assets\Scripts\MainGameManager.cs" />
     <Compile Include="Assets\Scripts\MoveObstacle.cs" />
     <Compile Include="Assets\Scripts\PlayerContorller.cs" />
     <Compile Include="Assets\Scripts\PopUpManager.cs" />
+    <Compile Include="Assets\Scripts\ScoreCounter.cs" />
+    <Compile Include="Assets\Scripts\Scroll.cs" />
     <Compile Include="Assets\Scripts\SoundManager.cs" />
     <Compile Include="Assets\Scripts\TitleFunction.cs" />
+    <Compile Include="Assets\Scripts\TitleScroll.cs" />
     <Compile Include="Assets\Scripts\TogglePause.cs" />
     <Compile Include="Assets\Scripts\VolumeChange.cs" />
   </ItemGroup>

@@ -480,6 +480,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51132f33a575d6a48b8cf1bb0fffe46f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  banner: {fileID: 0}
   selectbuttons: {fileID: 1862186901}
 --- !u!114 &731295185
 MonoBehaviour:
@@ -831,6 +832,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51132f33a575d6a48b8cf1bb0fffe46f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  banner: {fileID: 1494942932}
   selectbuttons: {fileID: 1862186901}
 --- !u!114 &906908755
 MonoBehaviour:
@@ -1828,6 +1830,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51132f33a575d6a48b8cf1bb0fffe46f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  banner: {fileID: 1494942932}
   selectbuttons: {fileID: 1862186901}
 --- !u!114 &1875767832
 MonoBehaviour:

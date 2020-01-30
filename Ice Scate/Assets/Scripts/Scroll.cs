@@ -10,7 +10,7 @@ public class Scroll : MonoBehaviour
 
 	void Update()
 	{
-		if(GameStateManager.manager_.state_ == GameStateManager.State.ACTIVE)
+		if(GameManager.manager_.state_ == GameManager.State.ACTIVE)
 		{
 			scroll_ = Mathf.Repeat(Time.time * speed_, 1);
 			Vector2 offset = new Vector2(0, scroll_);
