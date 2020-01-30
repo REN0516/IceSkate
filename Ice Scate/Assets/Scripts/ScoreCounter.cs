@@ -17,7 +17,7 @@ public class ScoreCounter : MonoBehaviour
 
     void Update()
     {
-        if (GameStateManager.manager_.state_ == GameStateManager.State.ACTIVE)
+        if (GameManager.manager_.state_ == GameManager.State.ACTIVE)
         {
             {
                 tmp_score_ += Time.deltaTime;

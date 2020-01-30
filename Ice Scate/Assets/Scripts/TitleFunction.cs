@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class TitleFunction: MonoBehaviour
 {
+    [SerializeField] private BannerViewScript banner;
     [SerializeField] private GameObject selectbuttons;
 
     //セレクトボタン表示
@@ -20,6 +21,7 @@ public class TitleFunction: MonoBehaviour
         LoadObject.transition_.Fade("MainGame");
         SoundManager.instance.PlaySE(0);
         selectbuttons.SetActive(false);
+        banner.DestroyBanner();
     }
 
     //チュートリアル遷移
@@ -28,5 +30,6 @@ public class TitleFunction: MonoBehaviour
         LoadObject.transition_.Fade("Tutorial");
         SoundManager.instance.PlaySE(0);
         selectbuttons.SetActive(false);
+        banner.DestroyBanner();
     }
 }

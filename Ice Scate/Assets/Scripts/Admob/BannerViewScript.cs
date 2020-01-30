@@ -44,4 +44,9 @@ public class BannerViewScript : MonoBehaviour
         // Load the banner with the request.
         bannerView.LoadAd(request);
     }
+
+    public void DestroyBanner()
+    {
+        bannerView.Destroy();
+    }
 }
