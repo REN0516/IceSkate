@@ -41,7 +41,7 @@ public class Emitter : MonoBehaviour
 
     void Create(int id)
     {
-        file_json = Resources.Load<TextAsset>("Stage").ToString();
+        file_json = Application.persistentDataPath + id.ToString() + ".txt";
         FileInfo info = new FileInfo(file_json);
         if (!info.Exists)
         {

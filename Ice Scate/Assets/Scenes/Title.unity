@@ -515,7 +515,6 @@ GameObject:
   - component: {fileID: 731295187}
   - component: {fileID: 731295186}
   - component: {fileID: 731295185}
-  - component: {fileID: 731295184}
   m_Layer: 5
   m_Name: StartButton
   m_TagString: Untagged
@@ -543,20 +542,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -350}
   m_SizeDelta: {x: -400, y: 240}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &731295184
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 731295182}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51132f33a575d6a48b8cf1bb0fffe46f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  banner: {fileID: 0}
-  selectbuttons: {fileID: 1862186901}
 --- !u!114 &731295185
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -597,7 +582,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 731295184}
+      - m_Target: {fileID: 965898728}
         m_MethodName: StartButtonFunction
         m_Mode: 1
         m_Arguments:
@@ -805,7 +790,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 965898727}
+      - m_Target: {fileID: 965898728}
         m_MethodName: OnOpenPopUp
         m_Mode: 3
         m_Arguments:
@@ -867,7 +852,6 @@ GameObject:
   - component: {fileID: 906908757}
   - component: {fileID: 906908756}
   - component: {fileID: 906908755}
-  - component: {fileID: 906908754}
   m_Layer: 5
   m_Name: TutorialButton
   m_TagString: Untagged
@@ -895,20 +879,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -300}
   m_SizeDelta: {x: 650, y: 180}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &906908754
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 906908752}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51132f33a575d6a48b8cf1bb0fffe46f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  banner: {fileID: 1494942932}
-  selectbuttons: {fileID: 1862186901}
 --- !u!114 &906908755
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -949,7 +919,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 965898727}
+      - m_Target: {fileID: 965898728}
         m_MethodName: OnOpenPopUp
         m_Mode: 3
         m_Arguments:
@@ -1084,7 +1054,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 965898726}
-  - component: {fileID: 965898727}
+  - component: {fileID: 965898728}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -1106,7 +1076,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &965898727
+--- !u!114 &965898728
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1115,9 +1085,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 965898725}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cdc0b721fbeffca499bd2fa900e29fdd, type: 3}
+  m_Script: {fileID: 11500000, guid: 51132f33a575d6a48b8cf1bb0fffe46f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  banner: {fileID: 1494942932}
+  button_start: {fileID: 731295182}
+  selectbuttons: {fileID: 1862186901}
   images_:
   - {fileID: 1862186901}
   - {fileID: 2744579402754891020}
@@ -1373,7 +1346,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 965898727}
+      - m_Target: {fileID: 965898728}
         m_MethodName: OnClosePopUp
         m_Mode: 3
         m_Arguments:
@@ -1964,7 +1937,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 965898727}
+      - m_Target: {fileID: 965898728}
         m_MethodName: OnOpenPopUp
         m_Mode: 3
         m_Arguments:
@@ -2074,7 +2047,6 @@ GameObject:
   - component: {fileID: 1875767834}
   - component: {fileID: 1875767833}
   - component: {fileID: 1875767832}
-  - component: {fileID: 1875767831}
   m_Layer: 5
   m_Name: MainButton
   m_TagString: Untagged
@@ -2102,20 +2074,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -100}
   m_SizeDelta: {x: 650, y: 180}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1875767831
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1875767829}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51132f33a575d6a48b8cf1bb0fffe46f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  banner: {fileID: 1494942932}
-  selectbuttons: {fileID: 1862186901}
 --- !u!114 &1875767832
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2156,7 +2114,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1875767831}
+      - m_Target: {fileID: 965898728}
         m_MethodName: MainButtonFunction
         m_Mode: 1
         m_Arguments:
@@ -2364,7 +2322,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 965898727}
+      - m_Target: {fileID: 965898728}
         m_MethodName: OnClosePopUp
         m_Mode: 3
         m_Arguments:
@@ -3580,7 +3538,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 965898727}
+      - m_Target: {fileID: 965898728}
         m_MethodName: OnClosePopUp
         m_Mode: 3
         m_Arguments:
