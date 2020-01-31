@@ -898,7 +898,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1419227761}
+      - m_Target: {fileID: 1419227759}
         m_MethodName: OnShowView
         m_Mode: 1
         m_Arguments:
@@ -2190,7 +2190,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image_game_over: {fileID: 1610354333}
-  controller_: {fileID: 0}
+  controller_: {fileID: 2024748958}
 --- !u!1 &1090765161
 GameObject:
   m_ObjectHideFlags: 0
@@ -2513,9 +2513,7 @@ GameObject:
   - component: {fileID: 1419227756}
   - component: {fileID: 1419227758}
   - component: {fileID: 1419227759}
-  - component: {fileID: 1419227757}
   - component: {fileID: 1419227760}
-  - component: {fileID: 1419227761}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -2537,19 +2535,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1419227757
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1419227755}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 61cd90048e651454ba2fb4f143e8075c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  score_text_: {fileID: 168660661}
 --- !u!114 &1419227758
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2581,6 +2566,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdc0b721fbeffca499bd2fa900e29fdd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  viewer: {fileID: 1062882313}
+  ui_objects_:
+  - {fileID: 969507332}
+  - {fileID: 1610354333}
   images_:
   - {fileID: 2057319596}
   - {fileID: 6201531238431634019}
@@ -2598,22 +2587,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   state_: 0
---- !u!114 &1419227761
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1419227755}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c5a0bca2142877c4991de9ea3bc442b5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  viewer: {fileID: 1062882313}
-  ui_objects_:
-  - {fileID: 969507332}
-  - {fileID: 1610354333}
+  score_text_: {fileID: 168660661}
 --- !u!1 &1433900595
 GameObject:
   m_ObjectHideFlags: 0

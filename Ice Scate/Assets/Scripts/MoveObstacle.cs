@@ -40,7 +40,7 @@ public class MoveObstacle : MonoBehaviour
 
     void Update()
     {
-        if(StateManager.manager_.state_ == StateManager.State.ACTIVE)
+        if(GameManager.manager_.state_ == GameManager.State.ACTIVE)
         {
             switch (type_)
             {

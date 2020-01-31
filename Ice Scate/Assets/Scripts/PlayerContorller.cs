@@ -30,7 +30,7 @@ public class PlayerContorller : MonoBehaviour
 
     void Update()
     {
-        if(StateManager.manager_.state_ == StateManager.State.ACTIVE)
+        if(GameManager.manager_.state_ == GameManager.State.ACTIVE)
         {
             if (Input.GetMouseButton(0))
             {
@@ -86,7 +86,7 @@ public class PlayerContorller : MonoBehaviour
         if (name == "Obstacle_Stay" || name == "Obstacle_Move")
         {
             active = false;
-            StateManager.manager_.state_ = StateManager.State.GAMEOVER;
+            GameManager.manager_.state_ = GameManager.State.GAMEOVER;
         }
     }
 

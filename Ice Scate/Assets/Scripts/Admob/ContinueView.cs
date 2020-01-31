@@ -71,7 +71,7 @@ public class ContinueView : MonoBehaviour
 
     public void HandleUserEarnedReward(object sender, Reward args)
     {
-        StateManager.manager_.state_ = StateManager.State.ACTIVE;
+        GameManager.manager_.state_ = GameManager.State.ACTIVE;
         StartCoroutine(controller_.SetActiveCollider());
     }
 }

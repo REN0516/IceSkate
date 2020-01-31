@@ -27,12 +27,12 @@ public class TogglePause : MonoBehaviour
         {
             SoundManager.instance.PlaySE(1);
             renderer_.sprite = sprites_pause_[1];
-            StateManager.manager_.state_ = StateManager.State.ACTIVE;
+            GameManager.manager_.state_ = GameManager.State.ACTIVE;
         }
         else
         {
             renderer_.sprite = sprites_pause_[0];
-            StateManager.manager_.state_ = StateManager.State.PAUSE;
+            GameManager.manager_.state_ = GameManager.State.PAUSE;
         }
     }
 }

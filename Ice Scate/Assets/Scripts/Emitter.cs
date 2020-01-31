@@ -20,7 +20,7 @@ public class Emitter : MonoBehaviour
 
     void Update()
     {
-        if(StateManager.manager_.state_ == StateManager.State.ACTIVE)
+        if(GameManager.manager_.state_ == GameManager.State.ACTIVE)
         {
             time_ -= Time.deltaTime;
         }

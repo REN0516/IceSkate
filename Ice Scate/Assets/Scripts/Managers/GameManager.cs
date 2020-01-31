@@ -3,8 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ScoreCounter : MonoBehaviour
+public class GameManager : MonoBehaviour
 {
+    public enum State
+    {
+        ACTIVE,
+        PAUSE,
+        GAMEOVER
+    }
+    public State state_ = State.ACTIVE;
+
+    public static GameManager manager_;
+
     [SerializeField] private Text score_text_;
 
     private float tmp_score_ = 0f;
@@ -12,12 +22,12 @@ public class ScoreCounter : MonoBehaviour
 
     void Start()
     {
-
+        manager_ = this;
     }
 
     void Update()
     {
-        if (StateManager.manager_.state_ == StateManager.State.ACTIVE)
+        if (state_ == State.ACTIVE)
         {
             {
                 tmp_score_ += Time.deltaTime;

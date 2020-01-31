@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class PopUpManager : MonoBehaviour
 {
+    [SerializeField] private ContinueView viewer;
+    [SerializeField] private GameObject[] ui_objects_;
     [SerializeField] private GameObject[] images_;
 
     void Start()
@@ -14,7 +16,32 @@ public class PopUpManager : MonoBehaviour
             images_[i].SetActive(false);
         }
     }
-    
+
+    void Update()
+    {
+        if (GameManager.manager_.state_ == GameManager.State.GAMEOVER)
+        {
+            ToggleActive(true);
+        }
+        else if (GameManager.manager_.state_ == GameManager.State.ACTIVE)
+        {
+            ToggleActive(false);
+        }
+    }
+
+    void ToggleActive(bool value)
+    {
+        for (int i = 0; i < ui_objects_.Length; i++)
+        {
+            ui_objects_[i].SetActive(value);
+        }
+    }
+
+    public void OnShowView()
+    {
+        viewer.ShowView();
+    }
+
     public void OnOpenPopUp(int value)
     {
         images_[0].SetActive(false);
