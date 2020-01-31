@@ -14,11 +14,13 @@ public class Emitter : MonoBehaviour
 
     private float time_ = 3f;
 
-    private string file_json = "";
+    private TextAsset asset;
+
+    private string file_json;
 
     void Update()
     {
-        if(GameManager.manager_.state_ == GameManager.State.ACTIVE)
+        if(StateManager.manager_.state_ == StateManager.State.ACTIVE)
         {
             time_ -= Time.deltaTime;
         }
@@ -39,7 +41,7 @@ public class Emitter : MonoBehaviour
 
     void Create(int id)
     {
-        file_json = "Stage/" + id.ToString() + ".txt";
+        file_json = Resources.Load<TextAsset>("Stage").ToString();
         FileInfo info = new FileInfo(file_json);
         if (!info.Exists)
         {
@@ -53,17 +55,12 @@ public class Emitter : MonoBehaviour
             Data data = JsonUtility.FromJson<Data>(json);
             for (int i = 0; i < data.data_count_stay; i++)
             {
-                Instantiate(obstacle_stay, data.data_position_stay[i], Quaternion.identity);
+                Instantiate(obstacle_stay, data.data_position_stay[i], Quaternion.identity).transform.parent = object_wave_.transform;
             }
             for (int i = 0; i < data.data_count_move; i++)
             {
-                Instantiate(obstacle_move, data.data_position_move[i], Quaternion.identity);
+                Instantiate(obstacle_move, data.data_position_move[i], Quaternion.identity).transform.parent = object_wave_.transform;
             }
-            Debug.Log("ロード成功");
-        }
-        else
-        {
-            Debug.Log("ロード失敗");
         }
     }
 

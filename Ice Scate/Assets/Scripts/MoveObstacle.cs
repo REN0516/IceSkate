@@ -15,7 +15,7 @@ public class MoveObstacle : MonoBehaviour
     {
         if(type_ == TYPE.move)
         {
-            speed_ = 10;
+            speed_ = 5;
             //x座標が0以上のときの処理
             if(transform.position.x > 0)
             {
@@ -40,7 +40,7 @@ public class MoveObstacle : MonoBehaviour
 
     void Update()
     {
-        if(GameManager.manager_.state_ == GameManager.State.ACTIVE)
+        if(StateManager.manager_.state_ == StateManager.State.ACTIVE)
         {
             switch (type_)
             {

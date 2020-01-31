@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerContorller : MonoBehaviour
 {
@@ -15,15 +16,21 @@ public class PlayerContorller : MonoBehaviour
     private float animation_x_;
     private float animation_y_;
 
+    private string name_scene;
+
+    private bool active = true;
+
     void Start()
     {
         rigidbody_ = GetComponent<Rigidbody2D>();
         animator_ = GetComponent<Animator>();
+
+        name_scene = SceneManager.GetActiveScene().name;
     }
 
     void Update()
     {
-        if(GameManager.manager_.state_ == GameManager.State.ACTIVE)
+        if(StateManager.manager_.state_ == StateManager.State.ACTIVE)
         {
             if (Input.GetMouseButton(0))
             {
@@ -62,7 +69,7 @@ public class PlayerContorller : MonoBehaviour
                 rigidbody_.velocity = Vector2.zero;
             }
         }
-        else if(GameManager.manager_.state_ == GameManager.State.PAUSE)
+        else
         {
             rigidbody_.velocity = Vector2.zero;
         }
@@ -76,9 +83,16 @@ public class PlayerContorller : MonoBehaviour
     void OnTriggerEnter2D(Collider2D c)
     {
         string name = c.gameObject.tag;
-        if(name == "Obstacle_Stay" || name == "Obstacle_Move")
+        if (name == "Obstacle_Stay" || name == "Obstacle_Move")
         {
-            Debug.Log("障害物に当たりました");
+            active = false;
+            StateManager.manager_.state_ = StateManager.State.GAMEOVER;
         }
+    }
+
+    public IEnumerator SetActiveCollider()
+    {
+        yield return new WaitForSeconds(3.0f);
+        active = true;
     }
 }

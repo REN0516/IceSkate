@@ -9,18 +9,6 @@ public class BannerViewScript : MonoBehaviour
 
     public void Start()
     {
-#if UNITY_ANDROID
-        //string appId = "ca-app-pub-3940256099942544~3347511713"; //テスト用
-        string appId = "ca-app-pub-5626871137103946~5237566387"; //本番用
-#elif UNITY_IPHONE
-            string appId = "ca-app-pub-3940256099942544~1458002511";
-#else
-            string appId = "unexpected_platform";
-#endif
-
-        // Initialize the Google Mobile Ads SDK.
-        MobileAds.Initialize(appId);
-
         RequestBanner();
     }
 
@@ -43,6 +31,8 @@ public class BannerViewScript : MonoBehaviour
 
         // Load the banner with the request.
         bannerView.LoadAd(request);
+
+        bannerView.Show();
     }
 
     public void DestroyBanner()
