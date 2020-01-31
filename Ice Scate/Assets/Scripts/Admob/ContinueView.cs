@@ -7,6 +7,7 @@ using System;
 public class ContinueView : MonoBehaviour
 {
     [SerializeField] private GameObject image_game_over;
+    [SerializeField] private PlayerContorller controller_;
 
     private RewardedAd rewardedAd;
 
@@ -70,6 +71,7 @@ public class ContinueView : MonoBehaviour
 
     public void HandleUserEarnedReward(object sender, Reward args)
     {
-        image_game_over.SetActive(false);
+        StateManager.manager_.state_ = StateManager.State.ACTIVE;
+        StartCoroutine(controller_.SetActiveCollider());
     }
 }

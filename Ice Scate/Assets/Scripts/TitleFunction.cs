@@ -23,13 +23,4 @@ public class TitleFunction: MonoBehaviour
         selectbuttons.SetActive(false);
         banner.DestroyBanner();
     }
-
-    //チュートリアル遷移
-    public void TutorialFunction()
-    {
-        LoadObject.transition_.Fade("Tutorial");
-        SoundManager.instance.PlaySE(0);
-        selectbuttons.SetActive(false);
-        banner.DestroyBanner();
-    }
 }
