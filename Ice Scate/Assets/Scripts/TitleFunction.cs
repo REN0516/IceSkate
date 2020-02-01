@@ -5,12 +5,14 @@ using UnityEngine;
 public class TitleFunction: MonoBehaviour
 {
     [SerializeField] private BannerViewScript banner;
+    [SerializeField] private GameObject button_start;
     [SerializeField] private GameObject selectbuttons;
+    [SerializeField] private GameObject[] images_;
 
     //セレクトボタン表示
     public void StartButtonFunction() 
     {
-        gameObject.SetActive(false);
+        button_start.SetActive(false);
         selectbuttons.SetActive(true);
         SoundManager.instance.PlaySE(0);
     }
@@ -22,5 +24,19 @@ public class TitleFunction: MonoBehaviour
         SoundManager.instance.PlaySE(0);
         selectbuttons.SetActive(false);
         banner.DestroyBanner();
+    }
+
+    public void OnOpenPopUp(int value)
+    {
+        images_[0].SetActive(false);
+        images_[value].SetActive(true);
+        SoundManager.instance.PlaySE(0);
+    }
+
+    public void OnClosePopUp(int value)
+    {
+        images_[0].SetActive(true);
+        images_[value].SetActive(false);
+        SoundManager.instance.PlaySE(1);
     }
 }
