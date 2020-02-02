@@ -19,20 +19,23 @@ public class TogglePause : MonoBehaviour
 
     public void OnTogglePause(bool value)
     {
-        for (int i = 0; i < ui_objects_.Length; i++)
+        if(GameManager.manager_.state_ != GameManager.State.GAMEOVER)
         {
-            ui_objects_[i].SetActive(value);
-        }
-        if (!value)
-        {
-            SoundManager.instance.PlaySE(1);
-            renderer_.sprite = sprites_pause_[1];
-            GameManager.manager_.state_ = GameManager.State.ACTIVE;
-        }
-        else
-        {
-            renderer_.sprite = sprites_pause_[0];
-            GameManager.manager_.state_ = GameManager.State.PAUSE;
+            for (int i = 0; i < ui_objects_.Length; i++)
+            {
+                ui_objects_[i].SetActive(value);
+            }
+            if (!value)
+            {
+                SoundManager.instance.PlaySE(1);
+                renderer_.sprite = sprites_pause_[1];
+                GameManager.manager_.state_ = GameManager.State.ACTIVE;
+            }
+            else
+            {
+                renderer_.sprite = sprites_pause_[0];
+                GameManager.manager_.state_ = GameManager.State.PAUSE;
+            }
         }
     }
 }

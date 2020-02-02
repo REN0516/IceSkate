@@ -31,6 +31,7 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
+        Debug.Log(state_);
         if (state_ == State.ACTIVE)
         {
             {

@@ -1,1 +1,1 @@
-{"data_count_stay":1,"data_count_move":1,"data_position_stay":[{"x":-1.4040000438690186,"y":5.860000133514404,"z":0.0}],"data_position_move":[{"x":3.5450000762939455,"y":1.8700000047683716,"z":0.0}]}
+{"data_count_stay":0,"data_count_move":2,"data_position_stay":[],"data_position_move":[{"x":-3.880000114440918,"y":-1.6299999952316285,"z":0.0},{"x":3.799999952316284,"y":2.180000066757202,"z":0.0}]}
