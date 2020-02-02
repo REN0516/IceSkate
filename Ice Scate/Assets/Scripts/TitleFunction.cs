@@ -11,6 +11,7 @@ public class TitleFunction : MonoBehaviour
     [SerializeField] private GameObject selectbutton;
     [SerializeField] private GameObject[] images_;
     [SerializeField] private Sprite[] sprite_button;
+    [SerializeField] private Text[] texts_button;
 
     private float alfa = 1f;
     [SerializeField]private float speed_fade = 0.05f;
@@ -58,7 +59,7 @@ public class TitleFunction : MonoBehaviour
         {
             alfa -= speed_fade;
             button_start.GetComponent<Image>().color = new Color(1f, 1f, 1f, alfa);
-            button_start.transform.GetChild(0).GetComponent<Text>().color = new Color(0f, 0f, 0f, alfa);
+            texts_button[0].color = new Color(texts_button[0].color.r, texts_button[0].color.g, texts_button[0].color.b, alfa);
             yield return new WaitForEndOfFrame();
         }
         alfa = 0f;
@@ -69,17 +70,7 @@ public class TitleFunction : MonoBehaviour
         while (alfa <= 1f)
         {
             alfa += speed_fade;
-            selectbutton.transform.GetChild(0).GetComponent<Image>().color = new Color(1f, 1f, 1f, alfa);
-            selectbutton.transform.GetChild(0).GetChild(0).GetComponent<Text>().color = new Color(0f, 0f, 0f, alfa);
-
-            selectbutton.transform.GetChild(1).GetComponent<Image>().color = new Color(1f, 1f, 1f, alfa);
-            selectbutton.transform.GetChild(1).GetChild(0).GetComponent<Text>().color = new Color(0f, 0f, 0f, alfa);
-
-            selectbutton.transform.GetChild(2).GetComponent<Image>().color = new Color(1f, 1f, 1f, alfa);
-            selectbutton.transform.GetChild(2).GetChild(0).GetComponent<Text>().color = new Color(0f, 0f, 0f, alfa);
-
-            selectbutton.transform.GetChild(3).GetComponent<Image>().color = new Color(1f, 1f, 1f, alfa);
-            selectbutton.transform.GetChild(3).GetChild(0).GetComponent<Text>().color = new Color(0f, 0f, 0f, alfa);
+            UpdateAlfa();
             yield return new WaitForEndOfFrame();
         }
     }
@@ -90,17 +81,7 @@ public class TitleFunction : MonoBehaviour
         while(alfa >= 0f)
         {
             alfa -= speed_fade;
-            selectbutton.transform.GetChild(0).GetComponent<Image>().color = new Color(1f, 1f, 1f, alfa);
-            selectbutton.transform.GetChild(0).GetChild(0).GetComponent<Text>().color = new Color(0f, 0f, 0f, alfa);
-
-            selectbutton.transform.GetChild(1).GetComponent<Image>().color = new Color(1f, 1f, 1f, alfa);
-            selectbutton.transform.GetChild(1).GetChild(0).GetComponent<Text>().color = new Color(0f, 0f, 0f, alfa);
-
-            selectbutton.transform.GetChild(2).GetComponent<Image>().color = new Color(1f, 1f, 1f, alfa);
-            selectbutton.transform.GetChild(2).GetChild(0).GetComponent<Text>().color = new Color(0f, 0f, 0f, alfa);
-
-            selectbutton.transform.GetChild(3).GetComponent<Image>().color = new Color(1f, 1f, 1f, alfa);
-            selectbutton.transform.GetChild(3).GetChild(0).GetComponent<Text>().color = new Color(0f, 0f, 0f, alfa);
+            UpdateAlfa();
             yield return new WaitForEndOfFrame();
         }
         images_[0].SetActive(false);
@@ -117,17 +98,7 @@ public class TitleFunction : MonoBehaviour
         while (alfa <= 1f)
         {
             alfa += speed_fade;
-            selectbutton.transform.GetChild(0).GetComponent<Image>().color = new Color(1f, 1f, 1f, alfa);
-            selectbutton.transform.GetChild(0).GetChild(0).GetComponent<Text>().color = new Color(0f, 0f, 0f, alfa);
-
-            selectbutton.transform.GetChild(1).GetComponent<Image>().color = new Color(1f, 1f, 1f, alfa);
-            selectbutton.transform.GetChild(1).GetChild(0).GetComponent<Text>().color = new Color(0f, 0f, 0f, alfa);
-
-            selectbutton.transform.GetChild(2).GetComponent<Image>().color = new Color(1f, 1f, 1f, alfa);
-            selectbutton.transform.GetChild(2).GetChild(0).GetComponent<Text>().color = new Color(0f, 0f, 0f, alfa);
-
-            selectbutton.transform.GetChild(3).GetComponent<Image>().color = new Color(1f, 1f, 1f, alfa);
-            selectbutton.transform.GetChild(3).GetChild(0).GetComponent<Text>().color = new Color(0f, 0f, 0f, alfa);
+            UpdateAlfa();
             yield return new WaitForEndOfFrame();
         }
     }
@@ -138,21 +109,26 @@ public class TitleFunction : MonoBehaviour
         while (alfa >= 0f)
         {
             alfa -= speed_fade;
-            selectbutton.transform.GetChild(0).GetComponent<Image>().color = new Color(1f, 1f, 1f, alfa);
-            selectbutton.transform.GetChild(0).GetChild(0).GetComponent<Text>().color = new Color(0f, 0f, 0f, alfa);
-
-            selectbutton.transform.GetChild(1).GetComponent<Image>().color = new Color(1f, 1f, 1f, alfa);
-            selectbutton.transform.GetChild(1).GetChild(0).GetComponent<Text>().color = new Color(0f, 0f, 0f, alfa);
-
-            selectbutton.transform.GetChild(2).GetComponent<Image>().color = new Color(1f, 1f, 1f, alfa);
-            selectbutton.transform.GetChild(2).GetChild(0).GetComponent<Text>().color = new Color(0f, 0f, 0f, alfa);
-
-            selectbutton.transform.GetChild(3).GetComponent<Image>().color = new Color(1f, 1f, 1f, alfa);
-            selectbutton.transform.GetChild(3).GetChild(0).GetComponent<Text>().color = new Color(0f, 0f, 0f, alfa);
+            UpdateAlfa();
             yield return new WaitForEndOfFrame();
         }
 
         selectbutton.SetActive(false);
         LoadObject.transition_.Fade("MainGame");
+    }
+
+    void UpdateAlfa()
+    {
+        selectbutton.transform.GetChild(0).GetComponent<Image>().color = new Color(1f, 1f, 1f, alfa);
+        texts_button[1].color = new Color(texts_button[1].color.r, texts_button[1].color.g, texts_button[1].color.b, alfa);
+
+        selectbutton.transform.GetChild(1).GetComponent<Image>().color = new Color(1f, 1f, 1f, alfa);
+        texts_button[2].color = new Color(texts_button[2].color.r, texts_button[2].color.g, texts_button[2].color.b, alfa);
+
+        selectbutton.transform.GetChild(2).GetComponent<Image>().color = new Color(1f, 1f, 1f, alfa);
+        texts_button[3].color = new Color(texts_button[3].color.r, texts_button[3].color.g, texts_button[3].color.b, alfa);
+
+        selectbutton.transform.GetChild(3).GetComponent<Image>().color = new Color(1f, 1f, 1f, alfa);
+        texts_button[4].color = new Color(texts_button[4].color.r, texts_button[4].color.g, texts_button[4].color.b, alfa);
     }
 }
