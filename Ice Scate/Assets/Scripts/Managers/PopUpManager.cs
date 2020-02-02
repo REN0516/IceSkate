@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PopUpManager : MonoBehaviour
 {
@@ -69,5 +70,19 @@ public class PopUpManager : MonoBehaviour
         images_[3].SetActive(true);
         SoundManager.instance.StopBGM();
         SoundManager.instance.PlaySE(3);
+    }
+
+    public void OnGoTitle()
+    {
+        if (LoadObject.transition_ != null)
+        {
+            LoadObject.transition_.Fade("Title");
+        }
+        else
+        {
+            SceneManager.LoadScene("Title");
+        }
+        SoundManager.instance.PlaySE(0);
+        images_[2].SetActive(false);
     }
 }

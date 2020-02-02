@@ -417,7 +417,7 @@ RectTransform:
   m_Children:
   - {fileID: 1117309677}
   m_Father: {fileID: 1041630425}
-  m_RootOrder: 6
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -918,7 +918,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
+          m_IntArgument: 3
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -1047,7 +1047,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 3
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -1214,12 +1214,16 @@ MonoBehaviour:
   banner: {fileID: 1494942932}
   text_score: {fileID: 821525115}
   button_start: {fileID: 731295182}
-  selectbuttons: {fileID: 1862186901}
+  selectbutton: {fileID: 1862186901}
   images_:
   - {fileID: 1862186901}
-  - {fileID: 2744579402754891020}
-  - {fileID: 919315445}
   - {fileID: 306444105}
+  - {fileID: 919315445}
+  - {fileID: 2744579402754891020}
+  sprite_button:
+  - {fileID: 21300000, guid: 60eb8d704bb7c364aa59d4b324781e83, type: 3}
+  - {fileID: 21300000, guid: 4312b84530f120746a29b10d04820e16, type: 3}
+  speed_fade: 0.05
 --- !u!1 &980639061
 GameObject:
   m_ObjectHideFlags: 0
@@ -1380,9 +1384,9 @@ RectTransform:
   - {fileID: 1275095727}
   - {fileID: 731295183}
   - {fileID: 1862186902}
-  - {fileID: 2744579402754891023}
-  - {fileID: 919315446}
   - {fileID: 306444108}
+  - {fileID: 919315446}
+  - {fileID: 2744579402754891023}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1476,7 +1480,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 3
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -3629,7 +3633,7 @@ RectTransform:
   - {fileID: 2744579401463934230}
   - {fileID: 2744579402543190130}
   m_Father: {fileID: 1041630425}
-  m_RootOrder: 4
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3682,7 +3686,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
+          m_IntArgument: 3
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
