@@ -16,16 +16,12 @@ public class PlayerContorller : MonoBehaviour
     private float animation_x_;
     private float animation_y_;
 
-    private string name_scene;
-
     private bool active = true;
 
     void Start()
     {
         rigidbody_ = GetComponent<Rigidbody2D>();
         animator_ = GetComponent<Animator>();
-
-        name_scene = SceneManager.GetActiveScene().name;
     }
 
     void Update()
@@ -83,10 +79,14 @@ public class PlayerContorller : MonoBehaviour
     void OnTriggerEnter2D(Collider2D c)
     {
         string name = c.gameObject.tag;
-        if (name == "Obstacle_Stay" || name == "Obstacle_Move")
+        if (active)
         {
-            active = false;
-            GameManager.manager_.state_ = GameManager.State.GAMEOVER;
+            if (name == "Obstacle_Stay" || name == "Obstacle_Move")
+            {
+                active = false;
+                SoundManager.instance.PlaySE(4);
+                GameManager.manager_.state_ = GameManager.State.GAMEOVER;
+            }
         }
     }
 

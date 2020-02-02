@@ -16,11 +16,6 @@ public class Emitter : MonoBehaviour
 
     private string file_json = "";
 
-    void Start()
-    {
-
-    }
-
     void Update()
     {
         if(GameManager.manager_.state_ == GameManager.State.ACTIVE)
@@ -35,7 +30,7 @@ public class Emitter : MonoBehaviour
             // WaveをEmitterの子要素にする
             object_wave_.transform.parent = transform;
 
-            id = Random.Range(0, 0);
+            id = Random.Range(0, 1);
             Create(id);
 
             time_ = 3f;
