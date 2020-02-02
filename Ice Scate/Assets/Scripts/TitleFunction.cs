@@ -11,6 +11,8 @@ public class TitleFunction: MonoBehaviour
     [SerializeField] private GameObject selectbuttons;
     [SerializeField] private GameObject[] images_;
 
+    private float alfa = 1f;
+
     void Start()
     {
         text_score.text = ScoreManager.instance.GetScore().ToString();
@@ -19,9 +21,8 @@ public class TitleFunction: MonoBehaviour
     //セレクトボタン表示
     public void StartButtonFunction() 
     {
-        button_start.SetActive(false);
-        selectbuttons.SetActive(true);
         SoundManager.instance.PlaySE(0);
+        StartCoroutine(SwitchButton());
     }
 
     //メインゲーム遷移
@@ -45,5 +46,39 @@ public class TitleFunction: MonoBehaviour
         images_[0].SetActive(true);
         images_[value].SetActive(false);
         SoundManager.instance.PlaySE(1);
+    }
+
+    IEnumerator SwitchButton()
+    {
+        alfa = 1f;
+        while(alfa >= 0f)
+        {
+            alfa -= 0.01f;
+            button_start.GetComponent<Image>().color = new Color(1f, 1f, 1f, alfa);
+            button_start.transform.GetChild(0).GetComponent<Text>().color = new Color(0f, 0f, 0f, alfa);
+            yield return new WaitForEndOfFrame();
+        }
+        alfa = 0f;
+
+        button_start.SetActive(false);
+        selectbuttons.SetActive(true);
+
+        while (alfa <= 1f)
+        {
+            alfa += 0.01f;
+            selectbuttons.transform.GetChild(0).GetComponent<Image>().color = new Color(0f, 0f, 0f, alfa);
+            selectbuttons.transform.GetChild(0).GetChild(0).GetComponent<Text>().color = new Color(0f, 0f, 0f, alfa);
+
+            selectbuttons.transform.GetChild(1).GetComponent<Image>().color = new Color(0f, 0f, 0f, alfa);
+            selectbuttons.transform.GetChild(1).GetChild(0).GetComponent<Text>().color = new Color(0f, 0f, 0f, alfa);
+            
+            selectbuttons.transform.GetChild(2).GetComponent<Image>().color = new Color(0f, 0f, 0f, alfa);
+            selectbuttons.transform.GetChild(2).GetChild(0).GetComponent<Text>().color = new Color(0f, 0f, 0f, alfa);
+            
+            selectbuttons.transform.GetChild(3).GetComponent<Image>().color = new Color(0f, 0f, 0f, alfa);
+            selectbuttons.transform.GetChild(3).GetChild(0).GetComponent<Text>().color = new Color(0f, 0f, 0f, alfa);
+            yield return new WaitForEndOfFrame();
+        }
+        
     }
 }
