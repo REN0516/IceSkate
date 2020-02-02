@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class PlayerContorller : MonoBehaviour
 {
+    [SerializeField] PopUpManager manager;
+
     private Rigidbody2D rigidbody_;
     private Animator animator_;
     [SerializeField] private int speed_ = 8;
@@ -83,9 +85,11 @@ public class PlayerContorller : MonoBehaviour
         {
             if (name == "Obstacle_Stay" || name == "Obstacle_Move")
             {
-                active = false;
                 SoundManager.instance.PlaySE(4);
+                animator_.SetBool("Hit", true);
                 GameManager.manager_.state_ = GameManager.State.GAMEOVER;
+                StartCoroutine(manager.ShowGameOverImage());
+                active = false;
             }
         }
     }
@@ -93,6 +97,7 @@ public class PlayerContorller : MonoBehaviour
     public IEnumerator SetActiveCollider()
     {
         yield return new WaitForSeconds(3.0f);
+        animator_.SetBool("Hit", false);
         active = true;
     }
 }

@@ -15,7 +15,7 @@ public class MoveObstacle : MonoBehaviour
     {
         if(type_ == TYPE.move)
         {
-            speed_ = 5;
+            speed_ = 3;
             //x座標が0以上のときの処理
             if(transform.position.x > 0)
             {
@@ -34,7 +34,7 @@ public class MoveObstacle : MonoBehaviour
         }
         else
         {
-            speed_ = 7;
+            speed_ = 5;
         }
     }
 

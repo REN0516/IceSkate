@@ -22,18 +22,21 @@ public class PopUpManager : MonoBehaviour
 
     void Update()
     {
-
         switch (GameManager.manager_.state_) {
-            case GameManager.State.GAMEOVER:
-                ToggleActive(true);
-                break;
             case GameManager.State.ACTIVE:
                 ToggleActive(false);
                 break;
             case GameManager.State.RESULT:
                 ui_objects_[1].SetActive(false);
+                images_[3].SetActive(true);
                 break;
         }
+    }
+
+    public IEnumerator ShowGameOverImage()
+    {
+        yield return new WaitForSeconds(2.0f);
+        ToggleActive(true);
     }
 
     void ToggleActive(bool value)
@@ -67,7 +70,6 @@ public class PopUpManager : MonoBehaviour
     {
         GameManager.manager_.state_ = GameManager.State.RESULT;
         result_text_.text = manager.GetScore().ToString();
-        images_[3].SetActive(true);
         SoundManager.instance.StopBGM();
         SoundManager.instance.PlaySE(3);
     }
