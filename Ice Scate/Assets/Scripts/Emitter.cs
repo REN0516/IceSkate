@@ -14,9 +14,12 @@ public class Emitter : MonoBehaviour
 
     private float time_ = 3f;
 
-    private TextAsset asset;
+    private string file_json = "";
 
-    private string file_json;
+    void Start()
+    {
+
+    }
 
     void Update()
     {
@@ -41,18 +44,11 @@ public class Emitter : MonoBehaviour
 
     void Create(int id)
     {
-        file_json = Application.persistentDataPath + id.ToString() + ".txt";
-        FileInfo info = new FileInfo(file_json);
-        if (!info.Exists)
-        {
-            Debug.Log("セーブファイルが見つかりません");
-            return;
-        }
-        string json = ReadTextFile(file_json);
+        file_json = Resources.Load<TextAsset>("Stage/" + id.ToString()).text;
 
-        if (json != null)
+        if (file_json != "")
         {
-            Data data = JsonUtility.FromJson<Data>(json);
+            Data data = JsonUtility.FromJson<Data>(file_json);
             for (int i = 0; i < data.data_count_stay; i++)
             {
                 Instantiate(obstacle_stay, data.data_position_stay[i], Quaternion.identity).transform.parent = object_wave_.transform;
@@ -61,26 +57,8 @@ public class Emitter : MonoBehaviour
             {
                 Instantiate(obstacle_move, data.data_position_move[i], Quaternion.identity).transform.parent = object_wave_.transform;
             }
+            Debug.Log("ロード成功");
         }
-    }
-
-    string ReadTextFile(string file)
-    {
-        string data = null;
-
-        try
-        {
-            using (StreamReader reader = new StreamReader(file))
-            {
-                data = reader.ReadToEnd();
-            }
-        }
-        catch (System.Exception e)
-        {
-            Debug.Log("読み込み失敗" + e.ToString());
-        }
-
-        return data;
     }
 
     void CreateWave()

@@ -45,7 +45,7 @@ public class PositionEditor : EditorWindow
                 return;
             }
 
-            file_json = Application.persistentDataPath + id.ToString() + ".txt";
+            file_json = "Assets/Resources/Stage/" + id.ToString() + ".txt";
             PositionData data = new PositionData();
 
             objects_stay = GameObject.FindGameObjectsWithTag("Obstacle_Stay");
@@ -90,7 +90,7 @@ public class PositionEditor : EditorWindow
         if (GUILayout.Button("ロード"))
         {
             Debug.Log("ロード");
-            file_json = Application.persistentDataPath + id.ToString() + ".txt";
+            file_json = "Assets/Resources/Stage/" + id.ToString() + ".txt";
             FileInfo info = new FileInfo(file_json);
             if (!info.Exists)
             {
