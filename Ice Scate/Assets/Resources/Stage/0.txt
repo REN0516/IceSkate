@@ -1,0 +1,1 @@
+{"data_count_stay":1,"data_count_move":1,"data_position_stay":[{"x":-1.690000057220459,"y":5.96999979019165,"z":0.0}],"data_position_move":[{"x":-3.880000114440918,"y":2.059999942779541,"z":0.0}]}

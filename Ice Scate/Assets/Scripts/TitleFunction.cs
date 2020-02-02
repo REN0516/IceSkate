@@ -1,13 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TitleFunction: MonoBehaviour
 {
     [SerializeField] private BannerViewScript banner;
+    [SerializeField] private Text text_score;
     [SerializeField] private GameObject button_start;
     [SerializeField] private GameObject selectbuttons;
     [SerializeField] private GameObject[] images_;
+
+    void Start()
+    {
+        text_score.text = ScoreManager.instance.GetScore().ToString();
+    }
 
     //セレクトボタン表示
     public void StartButtonFunction() 
