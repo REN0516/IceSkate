@@ -1,13 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PopUpManager : MonoBehaviour
 {
+    [SerializeField] private GameManager manager;
     [SerializeField] private ContinueView viewer;
     [SerializeField] private GameObject[] ui_objects_;
     [SerializeField] private GameObject[] images_;
+    [SerializeField] private Text result_text_;
 
     void Start()
     {
@@ -19,13 +21,17 @@ public class PopUpManager : MonoBehaviour
 
     void Update()
     {
-        if (GameManager.manager_.state_ == GameManager.State.GAMEOVER)
-        {
-            ToggleActive(true);
-        }
-        else if (GameManager.manager_.state_ == GameManager.State.ACTIVE)
-        {
-            ToggleActive(false);
+
+        switch (GameManager.manager_.state_) {
+            case GameManager.State.GAMEOVER:
+                ToggleActive(true);
+                break;
+            case GameManager.State.ACTIVE:
+                ToggleActive(false);
+                break;
+            case GameManager.State.RESULT:
+                ui_objects_[1].SetActive(false);
+                break;
         }
     }
 
@@ -56,17 +62,12 @@ public class PopUpManager : MonoBehaviour
         SoundManager.instance.PlaySE(1);
     }
 
-    public void OnGoTitle()
+    public void OnShowResult()
     {
-        if(LoadObject.transition_ != null)
-        {
-            LoadObject.transition_.Fade("Title");
-        }
-        else
-        {
-            SceneManager.LoadScene("Title");
-        }
-        SoundManager.instance.PlaySE(0);
-        images_[2].SetActive(false);
+        GameManager.manager_.state_ = GameManager.State.RESULT;
+        result_text_.text = manager.GetScore().ToString();
+        images_[3].SetActive(true);
+        SoundManager.instance.StopBGM();
+        SoundManager.instance.PlaySE(3);
     }
 }

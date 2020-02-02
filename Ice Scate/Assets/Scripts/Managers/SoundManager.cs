@@ -16,6 +16,8 @@ public class SoundManager : MonoBehaviour
     private float volume_bgm_ = 1;
     private float volume_se_ = 1;
 
+    private bool is_play = true;
+
     void Start()
     {
         if(instance == null)
@@ -38,11 +40,17 @@ public class SoundManager : MonoBehaviour
         switch (name_scene_)
         {
             case "Title":
+                if (!is_play)
+                {
+                    is_play = true;
+                }
                 PlayBGM(0);
                 break;
             case "MainGame":
-            case "Tutorial":
-                PlayBGM(1);
+                if (is_play)
+                {
+                    PlayBGM(1);
+                }
                 break;
         }
     }
@@ -59,6 +67,12 @@ public class SoundManager : MonoBehaviour
         {
             return;
         }
+    }
+
+    public void StopBGM()
+    {
+        is_play = false;
+        source_bgm_.Stop();
     }
 
     public void PlaySE(int number)

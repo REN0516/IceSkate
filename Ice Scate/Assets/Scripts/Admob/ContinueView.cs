@@ -6,7 +6,6 @@ using System;
 
 public class ContinueView : MonoBehaviour
 {
-    [SerializeField] private GameObject image_game_over;
     [SerializeField] private PlayerContorller controller_;
 
     private RewardedAd rewardedAd;
@@ -73,5 +72,6 @@ public class ContinueView : MonoBehaviour
     {
         GameManager.manager_.state_ = GameManager.State.ACTIVE;
         StartCoroutine(controller_.SetActiveCollider());
+        SoundManager.instance.PlaySE(2);
     }
 }
