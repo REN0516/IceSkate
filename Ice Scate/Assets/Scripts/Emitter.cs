@@ -30,7 +30,7 @@ public class Emitter : MonoBehaviour
             // WaveをEmitterの子要素にする
             object_wave_.transform.parent = transform;
 
-            id = Random.Range(0, 1);
+            id = Random.Range(0, 5);
             Create(id);
 
             time_ = 3f;
