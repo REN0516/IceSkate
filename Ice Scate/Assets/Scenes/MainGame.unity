@@ -2852,6 +2852,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   manager: {fileID: 1419227760}
+  controller_: {fileID: 2024748958}
   viewer: {fileID: 1062882313}
   ui_objects_:
   - {fileID: 969507332}

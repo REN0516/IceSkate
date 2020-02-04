@@ -12,7 +12,7 @@ public class Emitter : MonoBehaviour
 
     private int id;
 
-    private float time_ = 3f;
+    private float time_ = 5f;
 
     private string file_json = "";
 
@@ -30,10 +30,10 @@ public class Emitter : MonoBehaviour
             // WaveをEmitterの子要素にする
             object_wave_.transform.parent = transform;
 
-            id = Random.Range(0, 5);
+            id = Random.Range(0, 15);
             Create(id);
 
-            time_ = 3f;
+            time_ = 5f;
         }
     }
 
