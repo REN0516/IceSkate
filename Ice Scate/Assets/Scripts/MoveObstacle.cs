@@ -19,6 +19,7 @@ public class MoveObstacle : MonoBehaviour
             //x座標が0以上のときの処理
             if(transform.position.x > 0)
             {
+                transform.rotation = new Quaternion(0, 180, 0, 0);
                 if(speed_ > 0)
                 {
                     speed_ *= -1;
